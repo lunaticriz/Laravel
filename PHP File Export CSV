@@ -12,6 +12,7 @@ mysqldump -root -p Automated_group < Automated_group.sql --------------------Imp
 
 ==================================================================================== Start Export in csv file =================================================================================================
 ```php
+<?php
 $fileName = 'export.csv';
 $headers = array(
 	"Content-type"        => "text/csv",
@@ -42,6 +43,7 @@ $callback = function() use($userdeatils, $columns) {
 };
 
 return Response::stream($callback, 200, $headers);
+?>
 ```
 ==================================================================================== End Export in csv file =================================================================================================
 
